@@ -5,6 +5,8 @@ class HomePage extends StatelessWidget{
 
   final estiloTexto = new TextStyle( fontSize: 25 );
 
+  final conteo = 10;
+
   @override
   Widget build( BuildContext context ) {
     return Scaffold(
@@ -18,11 +20,19 @@ class HomePage extends StatelessWidget{
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text('Cantidad de clicks: ', style: estiloTexto),
-            Text('0', style: estiloTexto),
+            Text( '$conteo' , style: estiloTexto),
           ],
         )
       ),
-    )
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+      floatingActionButton: FloatingActionButton(
+        child: Icon( Icons.add ),
+        onPressed: () {
+          print('hola mundo');
+          // conteo = conteo + 1;
+        },
+      ),
+    );
   }
 
 }
